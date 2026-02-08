@@ -82,7 +82,7 @@ for (var i = 0, max = ss.length; i < max; i++) {
 if (i >= ss.length) {
 	var link = document.createElement("link");
 	link.rel = "stylesheet";
-	link.href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+	link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css";
 	document.getElementsByTagName("head")[0].appendChild(link);	
 }
 
@@ -103,4 +103,5 @@ if (html) {
 	hook.innerHTML = html;
 	hook.removeAttribute('style');
 	hook.setAttribute('class', HOVER_EFFECT);
+
 }
