@@ -1,79 +1,107 @@
-/* USER SETTING */
+/*USER SETTING*/
 var SOCIAL_LINKS = new Array(
-  'https://www.instagram.com/brodwei_/?hl=es',
-  'https://www.tiktok.com/@brodwei_',
-  'https://twitter.com/brodwei_',
-  'https://www.facebook.com/facebrodwei/',
-  'https://www.youtube.com/channel/UCU_nCLG8XiIo9i_st8LZCJA',
-  'https://open.spotify.com/artist/4Jf86IZAzXn1UDa7laE9yS',
-  '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''
+/*instagram*/'https://www.instagram.com/brodwei_/?hl=es',/*instagram*/
+/*tiktok*/'https://www.tiktok.com/@brodwei_',/*tiktok*/
+/*twitter*/'https://twitter.com/brodwei_',/*twitter*/
+/*facebook*/'https://www.facebook.com/facebrodwei/',/*facebook*/
+/*youtube*/'https://www.youtube.com/channel/UCU_nCLG8XiIo9i_st8LZCJA',/*youtube*/
+/*spotify*/'https://open.spotify.com/artist/4Jf86IZAzXn1UDa7laE9yS',/*spotify*/
+/*google-plus*/'',/*google*/
+/*behance*/'',/*behance*/
+/*linkedin*/'',/*linkedin*/
+/*codepen*/'',/*codepen*/
+/*delicious*/'',/*delicious*/
+/*deviantart*/'',/*deviantart*/
+/*dribbble*/'',/*dribbble*/
+/*dropbox*/'',/*dropbox*/
+/*drupal*/'',/*drupal*/
+/*flickr*/'',/*flickr*/
+/*foursquare*/'',/*foursquare*/
+/*github*/'',/*github*/
+/*joomla*/'',/*joomla*/
+/*lastfm*/'',/*lastfm*/
+/*pinterest*/'',/*pinterest*/
+/*reddit*/'',/*reddit*/
+/*skype*/'',/*skype*/
+/*slideshare*/'',/*slideshare*/
+/*soundcloud*/'',/*soundcloud*/
+/*stack-exchange*/'',/*stack-exchange*/
+/*stack-overflow*/'',/*stack-overflow*/
+/*steam*/'',/*steam*/
+/*tumblr*/'',/*tumblr*/
+/*twitch*/'',/*twitch*/
+/*wordpress*/'',/*wordpress*/
+/*yelp*/''/*yelp*/
 );
-
 var SOCIAL_ICONS = new Array(
-  'instagram',
-  'tiktok',
-  'x-twitter',
-  'facebook',
-  'youtube',
-  'spotify',
-  'google-plus',
-  'behance',
-  'linkedin',
-  'codepen',
-  'delicious',
-  'deviantart',
-  'dribbble',
-  'dropbox',
-  'drupal',
-  'flickr',
-  'foursquare',
-  'github',
-  'joomla',
-  'lastfm',
-  'pinterest',
-  'reddit',
-  'skype',
-  'slideshare',
-  'soundcloud',
-  'stack-exchange',
-  'stack-overflow',
-  'steam',
-  'tumblr',
-  'twitch',
-  'wordpress',
-  'yelp'
+'instagram',
+'tiktok',
+'x-twitter',
+'facebook',
+'youtube',
+'spotify',
+'google-plus',
+'behance',
+'linkedin',
+'codepen',
+'delicious',
+'deviantart',
+'dribbble',
+'dropbox',
+'drupal',
+'flickr',
+'foursquare',
+'github',
+'joomla',
+'lastfm',
+'pinterest',
+'reddit',
+'skype',
+'slideshare',
+'soundcloud',
+'stack-exchange',
+'stack-overflow',
+'steam',
+'tumblr',
+'twitch',
+'wordpress',
+'yelp'
 );
+// spin, jump, zoom, opacity, leave blank for none effect
+var HOVER_EFFECT = 'jump';/*HOVER_EFFECT*/
+var SHOW_TITLE = true;/*SHOW_TITLE*/
 
-var HOVER_EFFECT = 'jump';
-var SHOW_TITLE = true;
-
-/* LOAD FONT AWESOME 6 (CORRECTO) */
-if (!document.querySelector('link[href*="font-awesome/6"]')) {
-  var link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "https://use.fontawesome.com/releases/v6.4.2/css/all.css";
-  document.head.appendChild(link);
+// load font awesome
+var ss = document.getElementsByTagName('link');
+for (var i = 0, max = ss.length; i < max; i++) {
+	var href = ss[i].getAttribute('href');
+	if (href && href != null && href.indexOf("font-awesome") != -1) {
+        break;
+	}
+}
+if (i >= ss.length) {
+	var link = document.createElement("link");
+	link.rel = "stylesheet";
+	link.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v4-shims.min.css";
+	document.getElementsByTagName("head")[0].appendChild(link);	
 }
 
-/* MAKE SOCIAL LIST */
+// make social list
 var html = '';
 for (var i = 0; i < SOCIAL_LINKS.length; i++) {
-  var href = SOCIAL_LINKS[i];
-  if (href && href.indexOf('http') === 0) {
-    var title = SHOW_TITLE ? ' title="' + SOCIAL_ICONS[i] + '"' : '';
-    html +=
-      '<a href="' + href + '" target="_blank"' + title + '>' +
-      '<i class="fa-brands fa-' + SOCIAL_ICONS[i] + '"></i>' +
-      '</a>';
-  }
+	var href = SOCIAL_LINKS[i];
+	var title = '';
+	if (SHOW_TITLE) {
+		title = ' title="'+SOCIAL_ICONS[i]+'" ';
+	}
+	if (href && href.indexOf('://') != -1 && href.indexOf('http') != -1 && href.indexOf('.') != -1) {
+		html += '<a href="'+href+'" target="_blank"'+title+'><i class="fa fa-'+SOCIAL_ICONS[i]+'"></i></a>';
+	}
 }
-
 if (html) {
-  var hook = document.getElementById('abcd_141017_hook');
-  hook.innerHTML = html;
-  hook.className = HOVER_EFFECT;
+	hook = document.getElementById('abcd_141017_hook');
+	hook.innerHTML = html;
+	hook.removeAttribute('style');
+	hook.setAttribute('class', HOVER_EFFECT);
+
 }
-
-
-
-
