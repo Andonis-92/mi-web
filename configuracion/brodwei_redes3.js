@@ -51,7 +51,7 @@ var SHOW_TITLE = true;
 if (!document.querySelector('link[href*="font-awesome/6"]')) {
   var link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "https://use.fontawesome.com/releases/v6.4.2/css/all.css";
+  link.href = "https://use.fontawesome.com/releases/v6.4.2/css/v4-shims.css";
   document.head.appendChild(link);
 }
 
@@ -73,5 +73,6 @@ if (html) {
   hook.innerHTML = html;
   hook.className = HOVER_EFFECT;
 }
+
 
 
