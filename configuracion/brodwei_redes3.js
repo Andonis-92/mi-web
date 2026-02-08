@@ -63,7 +63,7 @@ for (var i = 0; i < SOCIAL_LINKS.length; i++) {
     var title = SHOW_TITLE ? ' title="' + SOCIAL_ICONS[i] + '"' : '';
     html +=
       '<a href="' + href + '" target="_blank"' + title + '>' +
-      '<i class="fa fa-' + SOCIAL_ICONS[i] + '"></i>' +
+      '<i class="fa-brands fa-' + SOCIAL_ICONS[i] + '"></i>' +
       '</a>';
   }
 }
@@ -73,4 +73,3 @@ if (html) {
   hook.innerHTML = html;
   hook.className = HOVER_EFFECT;
 }
-
