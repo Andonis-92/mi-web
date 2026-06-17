@@ -1,9 +1,9 @@
 /*USER SETTING*/
 var SOCIAL_LINKS = new Array(
-/*instagram*/'https://www.instagram.com/brodwei_/?hl=es',/*instagram*/
-/*tiktok*/'https://www.tiktok.com/@brodwei_',/*tiktok*/
 /*facebook*/'https://www.facebook.com/facebrodwei/',/*facebook*/
 /*youtube*/'https://www.youtube.com/channel/UCU_nCLG8XiIo9i_st8LZCJA',/*youtube*/
+/*tiktok*/'https://www.tiktok.com/@brodwei_',/*tiktok*/
+/*instagram*/'https://www.instagram.com/brodwei_/?hl=es',/*instagram*/
 /*spotify*/'https://open.spotify.com/artist/4Jf86IZAzXn1UDa7laE9yS',/*spotify*/
 /*google-plus*/'',/*google*/
 /*behance*/'',/*behance*/
@@ -35,7 +35,6 @@ var SOCIAL_LINKS = new Array(
 var SOCIAL_ICONS = new Array(
 'instagram',
 'tiktok',
-'x-twitter',
 'facebook',
 'youtube',
 'spotify',
