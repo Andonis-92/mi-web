@@ -33,11 +33,11 @@ var SOCIAL_LINKS = new Array(
 /*yelp*/''/*yelp*/
 );
 var SOCIAL_ICONS = new Array(
-'spotify',
-'instagram',
-'tiktok',
-'youtube',	
 'facebook',
+'youtube',
+'tiktok',
+'instagram',
+'spotify',
 'google-plus',
 'behance',
 'linkedin',
