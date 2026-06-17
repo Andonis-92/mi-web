@@ -38,7 +38,6 @@ var SOCIAL_ICONS = new Array(
 'youtube',
 'tiktok',
 'instagram',
-
 'google-plus',
 'behance',
 'linkedin',
